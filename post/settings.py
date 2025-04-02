@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'judexapp',
     'corsheaders',
     'rest_framework'
+
+    
 ]
 
 MIDDLEWARE = [

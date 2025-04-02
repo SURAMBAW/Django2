@@ -1,17 +1,13 @@
-from django.shortcuts import render
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .models import Task
+from .serializers import TaskSerializer
 
-from rest_framework import generics
+# View for listing and creating tasks
+class TaskListCreateAPIView(ListCreateAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
 
-from .models import Post
-from .serializer import PostSerializer
-
-
-class PostListCreateAPIView(generics.ListCreateAPIView):
-    serializer_class = PostSerializer
-    queryset = Post.objects.all()
-
-
-class PostRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = PostSerializer
-    queryset = Post.objects.all()    
-
+# View for retrieving, updating, and deleting a specific task
+class TaskRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
