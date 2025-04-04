@@ -1,25 +1,38 @@
-# To-Do List Application
+API Endpoints
+Get All Tasks
+URL: /tasks/
+Method: GET
+Description: Fetches all tasks from the backend.
+Usage in Code: 
+axios.get('https://backend-r4nn.onrender.com/api/tasks/')
 
-This is a full-stack To-Do List application built with a React frontend and a Django REST framework backend. The application allows users to manage their tasks, including adding, editing, deleting, and marking tasks as complete.
+Create a New Task
+URL: /tasks/
+Method: POST
+Description: Creates a new task.
+Request Body Example:
+{
+  "text": "New Task",
+  "completed": false
+}
+Usage in Code:
+axios.post('https://backend-r4nn.onrender.com/api/tasks/', newTask)
 
----
+Update a Task
+URL: /tasks/<id>/
+Method: PUT
+Description: Updates an existing task (e.g., toggling completion or editing the task text).
+Request Body Example:
+{
+  "text": "Updated Task",
+  "completed": true
+}
+Usage in Code:
+axios.put(`https://backend-r4nn.onrender.com/api/tasks/${id}/`, updatedTask)
 
-## Features
-
-- Add new tasks
-- Edit existing tasks
-- Delete tasks
-- Mark tasks as complete/incomplete
-- Toggle between light and dark modes
-
----
-
-## Frontend
-
-The frontend is built with React and is located in the `spa` directory. It communicates with the backend via REST API endpoints.
-
-### Frontend Setup
-
-1. Navigate to the `spa` directory:
-   ```bash
-   cd spa
+Delete a Task
+URL: /tasks/<id>/
+Method: DELETE
+Description: Deletes a task by its ID.
+Usage in Code:
+axios.delete(`https://backend-r4nn.onrender.com/api/tasks/${id}/`)
