@@ -11,4 +11,4 @@ A full-stack To-Do List application built with Django (backend) and React (front
 ## How to Run Locally
 1. Clone the repository:
    ```sh
-   git clone https://github.com/<your-username>/<repository-name>.git
+   git clone https://github.com/SURAMBAW/Django2
